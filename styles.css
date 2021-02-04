@@ -1,6 +1,22 @@
 :root {
+  --color-primary: #786ad9;
   --color-background: #212121;
   --color-white: #f0f0f0;
+  --spacing-container: 30px;
+
+  --border-radius: 12px 12px 12px 0px;
+
+  --global-spacing: 4px;
+  --global-spacing-xxsm: 4px;
+  --global-spacing-xsm: 8px;
+  --global-spacing-sm: 12px;
+  --global-spacing-md: 24px;
+  --global-spacing-lg: 48px;
+  --global-spacing-xlg: 96px;
+
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
 }
 
 html,
@@ -13,4 +29,87 @@ body {
 body {
   background: var(--color-background);
   font-family: "Kufam", cursive;
+  color: var(--color-white);
+}
+
+button {
+  padding: 13px 18px;
+  color: var(--color-white);
+  font-size: var(--font-size-lg);
+  border-radius: var(--border-radius);
+  border: none;
+  background-color: var(--color-primary);
+  transition: 300ms ease-in-out;
+  transition-property: transform;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale3d(1.05, 1.05, 1);
+  cursor: pointer;
+}
+
+.ghost {
+  background-color: transparent;
+  border: 1px solid white;
+  transition-property: background-color, border, transform;
+}
+
+.ghost:hover {
+  background-color: var(--color-primary);
+  border: none;
+}
+
+a {
+  text-decoration-line: none;
+  color: var(--color-white);
+}
+
+.wrapper {
+  max-width: 1260px;
+
+  margin: 0 auto;
+  padding: 0 var(--spacing-container);
+}
+
+.navigation {
+  display: sticky;
+  overflow: visible;
+}
+
+.navigation::before {
+  background: var(--color-background);
+  opacity: 0.4;
+}
+
+.navigation__inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: var(--global-spacing-md) 0;
+}
+
+.navigation__left,
+.navigation__right {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__left {
+}
+
+.navigation__logo {
+  width: 40px;
+  height: 40px;
+}
+
+.navigation__name {
+  padding-left: var(--global-spacing-sm);
+  font-size: 1.6rem;
+  font-weight: 550;
+}
+
+.navigation__links {
+  font-size: var(--font-size-lg);
+  padding-right: var(--global-spacing-md);
 }
